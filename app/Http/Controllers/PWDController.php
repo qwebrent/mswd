@@ -29,7 +29,7 @@ class PWDController extends Controller
         return view('backend.create', compact('pwd_gender','civil_status','educ_bg', 'pwd_disabilities', 'barangays'));
     }
 
-    public function store(Request $request)
+    public function store(Request $request, PWDInfo $pwdinfos)
     {
         $pwdinfos = PWDInfo::create([
             'last_name'=>$request->input('last_name'),
@@ -59,15 +59,16 @@ class PWDController extends Controller
         foreach ($request['disability_name'] as $disability){
             $disabilities[] = new PWDDisability([
                 'disability_id'=>$pwdinfos->id,
+                'p_w_d_info_id'=>$pwdinfos->id,
                 'disability_name' => $disability,
             ]);
         }
 
-        dd($disabilities);
+        //dd($disabilities);
         //dd($pwdinfos);
         $pwdinfos->disabilities()->saveMany($disabilities);
 
-        return redirect()->route('backend.search');
+        return redirect()->route('pwd.search');
 
     }
 

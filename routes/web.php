@@ -26,10 +26,10 @@ Route::get('/pwd', 'PWDController@index')->name('pwd.search')->middleware('auth'
 Route::get('/pwd/create', 'PWDController@create')->name('pwd.create')->middleware('auth');
 Route::post('/pwd/store', 'PWDController@store')->name('pwd.store')->middleware('auth');
 Route::get('/pwd/{id}', 'PWDController@show')->name('pwd.show')->middleware('auth');
-Route::get('/pwd/edit/{id}', 'PWDController@edit')->name('pwd.edit')->middleware('auth');
-Route::put('/pwd/{pwdinfo}', 'PWDController@update')->name('pwd.update')->middleware('auth');
-Route::delete('/pwd/{pwdinfo}', 'PWDController@destroy')->name('pwd.destroy')->middleware('auth');
-Route::get('/pwd/download/{id}', 'PWDController@download')->name('pwd.download')->middleware('auth');
+// Route::get('/pwd/edit/{id}', 'PWDController@edit')->name('pwd.edit')->middleware('auth');
+// Route::put('/pwd/{pwdinfo}', 'PWDController@update')->name('pwd.update')->middleware('auth');
+// Route::delete('/pwd/{pwdinfo}', 'PWDController@destroy')->name('pwd.destroy')->middleware('auth');
+// Route::get('/pwd/download/{id}', 'PWDController@download')->name('pwd.download')->middleware('auth');
 
 
 

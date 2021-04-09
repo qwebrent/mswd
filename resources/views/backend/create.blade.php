@@ -124,7 +124,7 @@
                     <label for="disability_id"><strong>Type of Disability: </strong></label>
                     <select class="form-control" name="disability_name[]" id="disabilities">
                         @foreach ($pwd_disabilities as $pwddisability)
-                            <option value="{{$pwddisability->id}}">{{ $pwddisability->pwd_disability }}</option>
+                            <option value="{{$pwddisability->pwd_disability}}">{{ $pwddisability->pwd_disability }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -162,7 +162,7 @@
 
         </div>
 
-        {{-- <div class="flex-row">
+        <div class="flex-row">
             <div class="d-flex justify-content-center">
                 <div>
                     <label for="uploadImage" class="p-1"><strong>Image: </strong></label>
@@ -175,7 +175,7 @@
                 </div>
             </div>
 
-        </div> --}}
+        </div>
 
 
         <span><h4 class="m-0 font-weight-bold text-primary">Address</h4></span>
@@ -290,7 +290,7 @@ $(document).ready(function() {
         fieldCounter++;
         e.preventDefault();
         if(fieldCounter <= 2){
-            $(wrapper).append('<div class="form-group" style="position: relative;"><select class="form-control" name="disability_name[]" id="disabilities">@foreach ($pwd_disabilities as $pwddisability)<option value="{{$pwddisability->id}}">{{ $pwddisability->pwd_disability }}</option>@endforeach</select> <a class="btn btn-danger remove_field" style="text-decoration: none; position: absolute; margin-top: 1rem;">Remove</a> </div>'); //add input box
+            $(wrapper).append('<div class="form-group" style="position: relative;"><select class="form-control" name="disability_name[]" id="disabilities">@foreach ($pwd_disabilities as $pwddisability)<option value="{{$pwddisability->pwd_disability}}">{{ $pwddisability->pwd_disability }}</option>@endforeach</select> <a class="btn btn-danger remove_field" style="text-decoration: none; position: absolute; margin-top: 1rem;">Remove</a> </div>'); //add input box
         }else{
 
         }

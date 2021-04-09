@@ -17,6 +17,7 @@ class CreatePwddisabilitiesTable extends Migration
             $table->id();
             //$table->foreignId('disability_id')->constrained('pwdinfos');
             $table->unsignedBigInteger('disability_id');
+            $table->unsignedBigInteger('p_w_d_info_id');
             $table->string('disability_name');
             $table->foreign('disability_id')->references('id')->on('pwdinfos');
             $table->timestamps();

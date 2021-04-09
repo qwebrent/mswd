@@ -21,7 +21,7 @@ $('#pwdtable').DataTable( {
         }
      ],
     initComplete: function () {
-        this.api().columns([2,5]).every( function () {
+        this.api().columns([2]).every( function () {
             var column = this;
             var select = $('<select class="form-control small"><option value=""></option></select>')
                 .appendTo( $(column.footer()).empty() )

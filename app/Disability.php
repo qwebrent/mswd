@@ -13,4 +13,5 @@ class Disability extends Model
     public function pwdinfos(){
         return $this->hasMany(PWDInfo::class);
     }
+
 }

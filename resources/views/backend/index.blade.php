@@ -6,13 +6,15 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <div class="d-sm-flex align-items-center justify-content-center mb-4">
         <h2 class="m-0 font-weight-bold text-primary">Municipal Social Welfare Development Office | Calauan</h2>
     </div>
 
     <!-- Content Row -->
 
-    <div class="row">
+    <div class="row justify-content-center">
+
+
 
         <!-- Male (Count) -->
         <div class="col-xl-3 col-md-6 mb-4">
@@ -51,11 +53,22 @@
         </div>
     </div>
 
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+
+            <div class="card-body shadow">
+                {!! $chart->container() !!}
+
+                <script src="{{ $chart->cdn() }}"></script>
+
+                {{ $chart->script() }}
+            </div>
+
+    {{-- <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h5 class="m-0 font-weight-bold text-primary">No. of PWD per Barangay</h5>
     </div>
 
+
     <div class="row">
+
         @foreach ($brgys as $brgy)
             <ul class="list-group list-group-flush " style="width: 33%">
                 <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -65,7 +78,8 @@
             </ul>
         @endforeach
 
-    </div>
+    </div> --}}
+
 
 
 </div>

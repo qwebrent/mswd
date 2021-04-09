@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\PWDInfo;
 
 
 class PWDDisability extends Model
@@ -14,7 +15,9 @@ class PWDDisability extends Model
     ];
 
 
+
     public function pwdinfos(){
         return $this->belongsTo(PWDInfo::class);
     }
+
 }

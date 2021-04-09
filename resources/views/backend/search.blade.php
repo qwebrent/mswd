@@ -61,7 +61,17 @@
                             <td>Brgy. {{ $pwdinfo -> barangay -> barangay }} {{ $pwdinfo -> municipality }}, {{ $pwdinfo -> province }}</td>
                             <td>{{ $pwdinfo -> b_day }}</td>
                             <td>{{ $pwdinfo -> reg_num }}</td>
-                            <td>{{ $pwdinfo -> disability -> pwd_disability }}</td>
+
+                            <td class="dropdown dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                View Disability
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                  @foreach ($pwdinfo -> disabilities as $disabilities)
+                                  <h6 class="d-flex align-items-center m-3">{{ $disabilities->disability_name }}</h6>
+                                  @endforeach
+                                </div>
+                            </td>
+
+
                             <td>
                                 <a class="btn btn-sm btn-primary" href="{{ route('pwd.show', $pwdinfo->id) }}">View</a>
                             </td>
@@ -73,7 +83,7 @@
                             <td></td>
                             <td align="right">Filter by Barangay: </td>
                             <td></td>
-                            <td colspan="2" align="right">Filter by Disability:</td>
+                            <td></td>
                             <td></td>
                             <td></td>
                         </tr>
